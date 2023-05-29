@@ -7,7 +7,8 @@ defmodule DNA do
     ?T => 0b1000,
   }
 
-  @nucleotide_decoder Enum.map(@nucleotide_encoder, fn {k, v} -> {v, k} |> Map.new()end)
+  @nucleotide_decoder Enum.map(@nucleotide_encoder, fn {k, v} -> {v, k} end)
+  |> Map.new()
 
 
   def encode_nucleotide(code_point) do
